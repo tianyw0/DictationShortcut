@@ -4,8 +4,10 @@ window.addEventListener("keydown", (e) => {
   // console.log('keydown', e);
   const editor = document.querySelector("#prompt-textarea");
   const isTyping = editor?.classList.contains("ProseMirror-focused");
+  // reedit old prompt will have more than one textarea
+  const len = document.querySelectorAll("textarea").length;
 
-  if (isTyping) return;
+  if (isTyping || len > 1) return;
 
   if (e.code === "Space") {
     e.preventDefault();
