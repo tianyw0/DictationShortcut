@@ -17,3 +17,14 @@ window.addEventListener("keydown", (e) => {
     }
   }
 });
+
+// listen for esc key to blur
+window.addEventListener("keydown", (e) => {
+  if (e.code === "Escape") {
+    const editor = document.querySelector("#prompt-textarea");
+    const isTyping = editor?.classList.contains("ProseMirror-focused");
+    if (isTyping) {
+      editor.blur();
+    }
+  }
+});
